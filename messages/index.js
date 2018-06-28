@@ -26,10 +26,10 @@ bot.localePath(path.join(__dirname, './locale'));
 bot.set('storage', tableStorage);
 
 bot.dialog('/', function (session) {
-    if(session.message.text === 'naver'){
-        session.send('really?');
-    };
     session.send('Mirror-' + session.message.text);
+    if(session.message.text.includes("naver login")){
+        session.send('naver login service');
+    }
 });
 
 if (useEmulator) {
